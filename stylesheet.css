@@ -1,4 +1,5 @@
 
+/* === Reset e variáveis globais === */
 :root {
   --primary-color: #333;
   --secondary-color: #f4f4f4;
@@ -19,6 +20,7 @@ body {
   background-color: var(--secondary-color);
 }
 
+/* === Estilos do Cabeçalho === */
 .main-header {
   display: flex;
   align-items: center;
@@ -29,7 +31,7 @@ body {
 }
 
 .header-photo img {
-  width: 150px; 
+  width: 150px; /* Tamanho da foto do perfil */
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
@@ -53,39 +55,32 @@ body {
 }
 
 .header-icons img {
-  width: 35px; 
+  width: 35px; /* Tamanho dos ícones sociais */
   height: 35px;
 }
 
-@media (max-width: 768px) {
-  .main-header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .header-about {
-    margin: 1.5rem 0;
-  }
-}
-.work {
+/* === Estilos da Seção de Projetos === */
+.projects {
   padding: 4rem 2rem;
   background-color: var(--primary-color);
   color: var(--secondary-color);
   text-align: center;
 }
 
-#wk-title {
+.projects h2 {
   font-family: var(--font-family-secondary);
   font-size: 2.5rem;
   margin-bottom: 2rem;
 }
 
-.wk-layout {
+/* Container que cria a grade */
+.projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
+/* Estilo de cada cartão de projeto */
 .wk-options {
   background-color: white;
   color: var(--primary-color);
@@ -116,12 +111,7 @@ body {
   color: #555;
 }
 
-@media (max-width: 768px) {
-  .wk-layout {
-    grid-template-columns: 1fr;
-  }
-}
-
+/* === Estilos do Rodapé/Contato === */
 .main-footer {
   display: flex;
   align-items: center;
@@ -162,9 +152,19 @@ body {
   gap: 1.5rem;
 }
 
+/* === Media Queries para Responsividade === */
 @media (max-width: 768px) {
+  .main-header,
   .main-footer {
     flex-direction: column;
     text-align: center;
+  }
+
+  .header-about {
+    margin: 1.5rem 0;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
   }
 }
